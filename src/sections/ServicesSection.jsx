@@ -53,7 +53,7 @@ export default function ServicesSection() {
             "Complete on-page and off-page SEO optimization strategy.",
         },
         {
-          name: "SEO Audit + Keyword Research Package",
+          name: "SEO Audit + Keyword Research",
           description: "Comprehensive audit with in-depth keyword research.",
         },
         {
@@ -71,12 +71,12 @@ export default function ServicesSection() {
           description: "Complete YouTube channel optimization for growth.",
         },
         {
-          name: "YouTube SEO + Video Optimization Package",
+          name: "YouTube SEO + Video Optimization",
           description:
             "Full YouTube SEO with thumbnail and metadata optimization.",
         },
         {
-          name: "Video Editing Package",
+          name: "Video Editing",
           description: "Professional video editing with motion graphics.",
         },
       ],
@@ -104,7 +104,7 @@ export default function ServicesSection() {
           description: "Strategy, content creation, and community management.",
         },
         {
-          name: "Full Social Media Marketing Package",
+          name: "Full Social Media Marketing",
           description: "Complete social media management across all platforms.",
         },
         {
@@ -131,7 +131,7 @@ export default function ServicesSection() {
           description: "Professional graphics and branded content creation.",
         },
         {
-          name: "Branding Package",
+          name: "Branding",
           description: "Logo, brand guidelines, and visual identity system.",
         },
       ],
