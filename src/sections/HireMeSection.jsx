@@ -324,7 +324,7 @@ export default function HireMeSection() {
               value={formData.phone}
               onChange={handleInputChange}
               className="w-full px-4 py-3 rounded-lg bg-white/80 dark:bg-dark-800/50 border border-gray-300 dark:border-cyan-500/20 focus:border-cyan-500 dark:focus:border-cyan-400 text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500 transition-colors"
-              placeholder="+1 (123) 456-7890"
+              placeholder="+8801XXXXXXXXX"
             />
           </div>
 

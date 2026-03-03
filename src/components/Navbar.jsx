@@ -54,7 +54,21 @@ export default function Navbar() {
     },
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = (event, href) => {
+    event.preventDefault();
+
+    const target = document.querySelector(href);
+    if (target) {
+      const navbarHeight = 88;
+      const targetTop =
+        target.getBoundingClientRect().top + window.scrollY - navbarHeight;
+
+      window.scrollTo({
+        top: Math.max(targetTop, 0),
+        behavior: "smooth",
+      });
+    }
+
     setIsOpen(false);
   };
 
@@ -69,6 +83,7 @@ export default function Navbar() {
           {/* Logo */}
           <motion.a
             href="#home"
+            onClick={(event) => handleNavClick(event, "#home")}
             whileHover={{ scale: 1.05 }}
             className="flex items-center gap-2 group"
           >
@@ -88,6 +103,7 @@ export default function Navbar() {
               <motion.a
                 key={item.label}
                 href={item.href}
+                onClick={(event) => handleNavClick(event, item.href)}
                 variants={itemVariants}
                 className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 link-underline text-sm font-medium"
               >
@@ -97,6 +113,7 @@ export default function Navbar() {
 
             {/* Theme Toggle Button */}
             <motion.button
+              type="button"
               onClick={toggleTheme}
               variants={itemVariants}
               whileHover={{ scale: 1.1 }}
@@ -112,6 +129,7 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             {/* Theme Toggle Button - Mobile */}
             <motion.button
+              type="button"
               onClick={toggleTheme}
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
@@ -123,6 +141,7 @@ export default function Navbar() {
 
             {/* Mobile Menu Button */}
             <motion.button
+              type="button"
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
               whileTap={{ scale: 0.95 }}
@@ -156,7 +175,7 @@ export default function Navbar() {
                   <motion.a
                     key={item.label}
                     href={item.href}
-                    onClick={handleNavClick}
+                    onClick={(event) => handleNavClick(event, item.href)}
                     variants={itemVariants}
                     className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 py-2 font-medium"
                   >
