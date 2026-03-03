@@ -56,20 +56,30 @@ export default function Navbar() {
 
   const handleNavClick = (event, href) => {
     event.preventDefault();
+    event.stopPropagation();
 
-    const target = document.querySelector(href);
-    if (target) {
-      const navbarHeight = 88;
-      const targetTop =
-        target.getBoundingClientRect().top + window.scrollY - navbarHeight;
-
-      window.scrollTo({
-        top: Math.max(targetTop, 0),
-        behavior: "smooth",
-      });
-    }
-
+    // Close menu first
     setIsOpen(false);
+
+    // Delay scroll to let menu animation complete (crucial for mobile)
+    setTimeout(() => {
+      const target = document.querySelector(href);
+      if (target) {
+        const navbarHeight = 80;
+        const targetPosition =
+          target.getBoundingClientRect().top +
+          window.pageYOffset -
+          navbarHeight;
+
+        // Use requestAnimationFrame for better mobile performance
+        requestAnimationFrame(() => {
+          window.scrollTo({
+            top: Math.max(targetPosition, 0),
+            behavior: "smooth",
+          });
+        });
+      }
+    }, 100); // Small delay for menu close animation
   };
 
   return (
@@ -105,7 +115,11 @@ export default function Navbar() {
                 href={item.href}
                 onClick={(event) => handleNavClick(event, item.href)}
                 variants={itemVariants}
-                className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 link-underline text-sm font-medium"
+                className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 link-underline text-sm font-medium cursor-pointer"
+                style={{
+                  WebkitTapHighlightColor: "transparent",
+                  touchAction: "manipulation",
+                }}
               >
                 {item.label}
               </motion.a>
@@ -177,7 +191,11 @@ export default function Navbar() {
                     href={item.href}
                     onClick={(event) => handleNavClick(event, item.href)}
                     variants={itemVariants}
-                    className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 py-2 font-medium"
+                    className="text-gray-700 dark:text-white hover:text-cyan-500 dark:hover:text-cyan-400 transition-colors duration-300 py-2 font-medium cursor-pointer select-none"
+                    style={{
+                      WebkitTapHighlightColor: "transparent",
+                      touchAction: "manipulation",
+                    }}
                   >
                     {item.label}
                   </motion.a>
