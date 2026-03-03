@@ -1,0 +1,8 @@
+/* App.css - All styles are handled by Tailwind CSS and index.css */
+
+/* Prevent layout shifts from scrollbar */
+html {
+  overflow-y: scroll;
+}
+
+/* Smooth scrolling already handled in index.css */
