@@ -18,26 +18,9 @@ export default function ContactSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             Let's Get in <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-300 mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300">
             Ready to scale your project? Reach me by Email or WhatsApp:
           </p>
-
-          <motion.div
-            initial={{ opacity: 0, scale: 0.95 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="glass-card rounded-lg p-6 md:p-8 border-cyan-500/30 inline-block max-w-2xl"
-          >
-            <p className="text-lg md:text-xl font-semibold text-cyan-600 dark:text-cyan-400 mb-2">
-              "Let's build your project with strategy, creativity, and modern
-              execution."
-            </p>
-            <p className="text-sm text-gray-600 dark:text-gray-300">
-              Whether it's quick questions or detailed project discussions, I'm
-              here to help.
-            </p>
-          </motion.div>
         </motion.div>
 
         {/* Contact Methods */}

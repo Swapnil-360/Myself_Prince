@@ -193,7 +193,7 @@ export default function PortfolioSection() {
           className="text-center mt-16"
         >
           <p className="text-lg text-gray-600 dark:text-gray-300 mb-6">
-            Ready to get your project done by the same expert team?
+            Ready to start your project with a professional freelancer?
           </p>
           <motion.a
             href="#hire"

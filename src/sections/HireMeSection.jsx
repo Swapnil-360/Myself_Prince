@@ -246,8 +246,8 @@ export default function HireMeSection() {
           </p>
           <div className="glass-card rounded-lg p-4 border-cyan-500/30 inline-block">
             <p className="text-sm md:text-base text-cyan-600 dark:text-cyan-400 font-semibold">
-              "Let's build your project with strategy, creativity, and modern
-              execution."
+              Let's build your project with strategy, creativity, and modern
+              execution.
             </p>
           </div>
         </motion.div>
