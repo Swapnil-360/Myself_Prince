@@ -3,7 +3,6 @@ import { motion } from "framer-motion";
 import {
   SOCIAL_LINKS,
   getSocialHref,
-  getSocialDisplay,
 } from "../config/siteConfig";
 
 export default function SocialLinks({
@@ -16,14 +15,14 @@ export default function SocialLinks({
     {
       icon: Mail,
       label: "Email",
-      value: getSocialDisplay("email", email),
+      actionText: "Tap to send an email",
       href: getSocialHref("email", email),
       color: "from-red-500 to-pink-500",
     },
     {
       icon: MessageSquare,
       label: "WhatsApp",
-      value: getSocialDisplay("whatsapp", phone),
+      actionText: "Tap to chat on WhatsApp",
       href: getSocialHref("whatsapp", phone),
       color: "from-green-500 to-emerald-500",
     },
@@ -123,10 +122,12 @@ export default function SocialLinks({
               <Icon size={24} />
             </div>
             <div>
-              <p className="text-sm text-gray-400">{item.label}</p>
-              {item.label !== "WhatsApp" && (
-                <p className="font-semibold text-white">{item.value}</p>
-              )}
+              <p className="text-sm text-gray-600 dark:text-gray-300">
+                {item.label}
+              </p>
+              <p className="font-semibold text-gray-900 dark:text-white">
+                {item.actionText}
+              </p>
             </div>
           </motion.a>
         );

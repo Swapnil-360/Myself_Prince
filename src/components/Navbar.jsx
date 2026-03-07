@@ -159,6 +159,7 @@ export default function Navbar() {
               onClick={() => setIsOpen(!isOpen)}
               className="p-2 rounded-lg hover:bg-gray-200 dark:hover:bg-white/10 transition-colors"
               whileTap={{ scale: 0.95 }}
+              aria-label="Toggle mobile menu"
             >
               {isOpen ? (
                 <X size={24} className="text-cyan-500 dark:text-cyan-400" />
