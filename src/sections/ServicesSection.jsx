@@ -221,6 +221,38 @@ export default function ServicesSection() {
           </p>
         </motion.div>
 
+        {/* Service Images Showcase */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
+          className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto"
+        >
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-500/30 dark:border-cyan-500/40 bg-white dark:bg-gray-800"
+          >
+            <img
+              src="/services1.jpg"
+              alt="Services showcase 1"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.02 }}
+            transition={{ duration: 0.3 }}
+            className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-500/30 dark:border-cyan-500/40 bg-white dark:bg-gray-800"
+          >
+            <img
+              src="/services2.jpg"
+              alt="Services showcase 2"
+              className="w-full h-auto object-contain"
+            />
+          </motion.div>
+        </motion.div>
+
         {/* Service Categories Grid */}
         <motion.div
           className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"

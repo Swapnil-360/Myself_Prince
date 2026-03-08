@@ -192,14 +192,6 @@ export default function Footer() {
               © 25-26 myself_prince. All rights reserved.
             </motion.p>
 
-            {/* Made with love */}
-            <motion.div
-              variants={itemVariants}
-              className="text-sm text-gray-300 dark:text-gray-400"
-            >
-              Developed by Swapnil
-            </motion.div>
-
             {/* CTA */}
             <motion.a
               href="#hire"
