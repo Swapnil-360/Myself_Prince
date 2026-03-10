@@ -34,10 +34,12 @@ export default function AnimatedCard({
         },
       }}
       className={`
-        glass-card rounded-lg p-6
-        border border-cyan-400/40 dark:border-cyan-500/30
-        hover:border-cyan-500/70 dark:hover:border-cyan-400/60
-        bg-white/80 dark:bg-white/5
+        rounded-2xl p-6
+        border border-cyan-300/40 dark:border-white/10
+        hover:border-cyan-400/60 dark:hover:border-white/20
+        bg-white/30 dark:bg-white/5
+        backdrop-blur-xl backdrop-saturate-150
+        shadow-lg hover:shadow-xl
         transition-all duration-200
         ${glowEffect ? "glow-effect" : ""}
         ${className}

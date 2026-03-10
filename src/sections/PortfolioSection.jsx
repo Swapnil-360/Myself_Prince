@@ -163,9 +163,9 @@ export default function PortfolioSection() {
                 </button>
               </div>
 
-              <div className="overflow-hidden rounded-xl border border-cyan-500/25 dark:border-cyan-500/30">
+              <div className="overflow-hidden rounded-2xl border border-cyan-300/40 dark:border-white/10 bg-white/25 dark:bg-white/3 backdrop-blur-lg backdrop-saturate-150 shadow-lg">
                 <motion.div
-                  className="flex gap-3 w-max p-3"
+                  className="flex gap-4 w-max p-4"
                   animate={{ x: ["0%", "-50%"] }}
                   transition={{
                     duration: 24,
@@ -179,7 +179,7 @@ export default function PortfolioSection() {
                         key={`${work.id}-${shotIndex}`}
                         src={shot}
                         alt={`${work.title} preview ${shotIndex + 1}`}
-                        className="w-80 h-52 rounded-lg object-contain bg-white dark:bg-dark-900"
+                        className="w-80 h-52 rounded-xl object-contain bg-white/60 dark:bg-white/10 backdrop-blur-sm shadow-md"
                         loading="lazy"
                       />
                     ),
@@ -199,7 +199,7 @@ export default function PortfolioSection() {
           className="text-center mb-12 mt-16"
         >
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            What clients say about our work in website development, SEO, and
+            What clients say about my work in website development, SEO, and
             graphics design.
           </p>
         </motion.div>
