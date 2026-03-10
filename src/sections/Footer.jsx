@@ -192,6 +192,18 @@ export default function Footer() {
               © 25-26 myself_prince. All rights reserved.
             </motion.p>
 
+            {/* Developed by */}
+            <motion.div
+              variants={itemVariants}
+              className="text-sm text-gray-300 dark:text-gray-400 text-center"
+            >
+              Developed by{" "}
+              <span className="font-semibold text-cyan-400">
+                S.B. Prince (Myself)
+              </span>{" "}
+              with <span className="text-red-400">❤</span>
+            </motion.div>
+
             {/* CTA */}
             <motion.a
               href="#hire"

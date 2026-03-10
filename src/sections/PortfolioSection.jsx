@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Star, User2 } from "lucide-react";
+import { ExternalLink, Star, User2 } from "lucide-react";
 import Section from "../components/Section";
 import AnimatedCard from "../components/AnimatedCard";
 
@@ -51,25 +51,25 @@ export default function PortfolioSection() {
     },
     {
       id: 5,
-      name: "Mohammad Iqbal",
-      company: "Online Education",
-      role: "Director",
-      service: "Graphics Design",
+      name: "James Mitchell",
+      company: "True Blend Essentials",
+      role: "CEO & Founder",
+      service: "Website Development + Branding",
       rating: 5,
       gender: "male",
       review:
-        "Prince's graphics design work transformed our brand. The visual consistency across all platforms increased our brand recognition immensely.",
+        "Prince completely transformed our e-commerce presence with an exceptional website design and seamless user experience. The custom branding and product showcase features have significantly boosted our online sales and brand visibility!",
     },
     {
       id: 6,
-      name: "Nusrat Jahan",
-      company: "Business Solutions",
-      role: "Manager",
-      service: "Website Development",
+      name: "Victoria Palmer",
+      company: "Nautical Book Club",
+      role: "CEO & Founder",
+      service: "Website Development + SEO",
       rating: 5,
       gender: "female",
       review:
-        "Professional, creative, and deadline-oriented. Prince developed our corporate website with SEO integration. The results exceeded our expectations!",
+        "The website Prince built exceeded all our expectations! The elegant design perfectly captures our brand essence, and the SEO optimization has helped us reach book enthusiasts worldwide. Our subscription numbers have tripled since launch!",
     },
   ];
 
@@ -94,6 +94,32 @@ export default function PortfolioSection() {
     },
   };
 
+  const specialWorks = [
+    {
+      id: 1,
+      title: "True Blend Essentials",
+      url: "https://trueblendessentials.com",
+      screenshots: [
+        "/previews/trueblend-1.png",
+        "/previews/trueblend-2.png",
+        "/previews/trueblend-3.png",
+        "/previews/trueblend-4.png",
+        "/previews/trueblend-5.png",
+      ],
+    },
+    {
+      id: 2,
+      title: "Nautical Book Club",
+      url: "https://nauticalbookclub.com/",
+      screenshots: [
+        "/previews/nautical-1.png",
+        "/previews/nautical-2.png",
+        "/previews/nautical-3.png",
+        "/previews/nautical-4.png",
+      ],
+    },
+  ];
+
   return (
     <Section id="portfolio">
       <div className="max-w-7xl mx-auto">
@@ -108,9 +134,73 @@ export default function PortfolioSection() {
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 text-gray-900 dark:text-white">
             Client <span className="gradient-text">Reviews</span>
           </h2>
+        </motion.div>
+
+        {/* Special Work Preview */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="grid lg:grid-cols-2 gap-8 mb-14"
+        >
+          {specialWorks.map((work) => (
+            <AnimatedCard key={work.id} className="p-6">
+              <div className="flex items-center justify-between gap-4 mb-4">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+                  {work.title}
+                </h3>
+                <button
+                  type="button"
+                  onClick={() => {
+                    window.open(work.url, "_blank");
+                  }}
+                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-all duration-200 cursor-pointer border-0 relative z-10"
+                  style={{ pointerEvents: "auto" }}
+                >
+                  Live Link
+                  <ExternalLink size={14} />
+                </button>
+              </div>
+
+              <div className="overflow-hidden rounded-xl border border-cyan-500/25 dark:border-cyan-500/30">
+                <motion.div
+                  className="flex gap-3 w-max p-3"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{
+                    duration: 24,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                >
+                  {[...work.screenshots, ...work.screenshots].map(
+                    (shot, shotIndex) => (
+                      <img
+                        key={`${work.id}-${shotIndex}`}
+                        src={shot}
+                        alt={`${work.title} preview ${shotIndex + 1}`}
+                        className="w-80 h-52 rounded-lg object-contain bg-white dark:bg-dark-900"
+                        loading="lazy"
+                      />
+                    ),
+                  )}
+                </motion.div>
+              </div>
+            </AnimatedCard>
+          ))}
+        </motion.div>
+
+        {/* BD Clients Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          className="text-center mb-12 mt-16"
+        >
           <p className="text-lg text-gray-600 dark:text-gray-300">
-            What clients from Bangladesh say about our work in website
-            development, SEO, and graphics design.
+            What clients say about our work in website development, SEO, and
+            graphics design.
           </p>
         </motion.div>
 
