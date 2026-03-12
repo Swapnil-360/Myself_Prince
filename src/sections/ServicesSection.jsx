@@ -227,12 +227,12 @@ export default function ServicesSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.4, delay: 0.2 }}
-          className="grid md:grid-cols-2 gap-8 mb-16 max-w-5xl mx-auto"
+          className="grid md:grid-cols-2 gap-6 md:gap-8 mb-16 w-full max-w-5xl mx-auto px-2 sm:px-0 overflow-hidden"
         >
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-500/30 dark:border-cyan-500/40 bg-white dark:bg-gray-800"
+            className="overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-400/40 dark:border-cyan-500/30 bg-cyan-50/40 dark:bg-white/5 backdrop-blur-sm"
           >
             <img
               src="/services1.jpg"
@@ -243,7 +243,7 @@ export default function ServicesSection() {
           <motion.div
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
-            className="overflow-hidden rounded-2xl shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-500/30 dark:border-cyan-500/40 bg-white dark:bg-gray-800"
+            className="overflow-hidden rounded-2xl shadow-xl hover:shadow-2xl hover:shadow-glow-lg transition-all duration-300 border-2 border-cyan-400/40 dark:border-cyan-500/30 bg-cyan-50/40 dark:bg-white/5 backdrop-blur-sm"
           >
             <img
               src="/services2.jpg"

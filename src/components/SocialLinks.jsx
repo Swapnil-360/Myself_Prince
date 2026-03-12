@@ -1,9 +1,6 @@
 import { Mail, MessageSquare } from "lucide-react";
 import { motion } from "framer-motion";
-import {
-  SOCIAL_LINKS,
-  getSocialHref,
-} from "../config/siteConfig";
+import { SOCIAL_LINKS, getSocialHref } from "../config/siteConfig";
 
 export default function SocialLinks({
   email = SOCIAL_LINKS.email,

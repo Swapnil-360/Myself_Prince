@@ -34,6 +34,7 @@ export default function AnimatedCard({
         },
       }}
       className={`
+        relative w-full max-w-full
         rounded-2xl p-6
         border border-cyan-300/40 dark:border-white/10
         hover:border-cyan-400/60 dark:hover:border-white/20

@@ -11,7 +11,7 @@ import Footer from "./sections/Footer";
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 transition-colors duration-300">
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 via-blue-50 to-purple-50 dark:from-dark-900 dark:via-dark-800 dark:to-dark-900 transition-colors duration-300 w-full overflow-x-hidden">
         {/* Navbar */}
         <Navbar />
 

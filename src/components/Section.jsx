@@ -43,7 +43,7 @@ export default function Section({
       animate={inView ? "visible" : "hidden"}
       variants={container}
       className={`
-        py-16 md:py-24 px-4 md:px-8 lg:px-16
+        py-16 md:py-24 px-4 sm:px-6 md:px-8 lg:px-16 w-full max-w-full overflow-x-hidden
         ${bgGradient ? "bg-gradient-to-br from-gray-100 to-blue-100 dark:from-dark-800 dark:to-dark-700" : ""}
         ${className}
       `}

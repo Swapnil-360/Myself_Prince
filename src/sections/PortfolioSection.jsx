@@ -137,17 +137,11 @@ export default function PortfolioSection() {
         </motion.div>
 
         {/* Special Work Preview */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.1 }}
-          className="grid lg:grid-cols-2 gap-8 mb-14"
-        >
+        <div className="grid lg:grid-cols-2 gap-6 w-full max-w-full overflow-hidden mb-14">
           {specialWorks.map((work) => (
-            <AnimatedCard key={work.id} className="p-6">
-              <div className="flex items-center justify-between gap-4 mb-4">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+            <AnimatedCard key={work.id} className="p-4 sm:p-6 w-full max-w-full overflow-hidden">
+              <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 dark:text-white truncate max-w-full">
                   {work.title}
                 </h3>
                 <button
@@ -155,7 +149,7 @@ export default function PortfolioSection() {
                   onClick={() => {
                     window.open(work.url, "_blank");
                   }}
-                  className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-all duration-200 cursor-pointer border-0 relative z-10"
+                  className="inline-flex items-center gap-2 px-3 sm:px-4 py-2 text-xs font-semibold rounded-lg bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-400 hover:bg-cyan-200 dark:hover:bg-cyan-900/50 transition-all duration-200 cursor-pointer border-0 relative z-10 sm:w-auto justify-center flex-shrink-0 whitespace-nowrap"
                   style={{ pointerEvents: "auto" }}
                 >
                   Live Link
@@ -163,32 +157,38 @@ export default function PortfolioSection() {
                 </button>
               </div>
 
-              <div className="overflow-hidden rounded-2xl border border-cyan-300/40 dark:border-white/10 bg-white/25 dark:bg-white/3 backdrop-blur-lg backdrop-saturate-150 shadow-lg">
-                <motion.div
-                  className="flex gap-4 w-max p-4"
-                  animate={{ x: ["0%", "-50%"] }}
-                  transition={{
-                    duration: 24,
-                    ease: "linear",
-                    repeat: Infinity,
-                  }}
-                >
-                  {[...work.screenshots, ...work.screenshots].map(
-                    (shot, shotIndex) => (
-                      <img
-                        key={`${work.id}-${shotIndex}`}
-                        src={shot}
-                        alt={`${work.title} preview ${shotIndex + 1}`}
-                        className="w-80 h-52 rounded-xl object-contain bg-white/60 dark:bg-white/10 backdrop-blur-sm shadow-md"
-                        loading="lazy"
-                      />
-                    ),
-                  )}
-                </motion.div>
+              <div className="w-full overflow-hidden rounded-2xl border border-cyan-300/40 dark:border-white/10 bg-white/25 dark:bg-white/3 backdrop-blur-lg backdrop-saturate-150 shadow-lg relative">
+                <div className="overflow-hidden w-full relative">
+                  <motion.div
+                    className="flex gap-3 sm:gap-4 w-max p-3 sm:p-4"
+                    animate={{ x: ["0%", "-50%"] }}
+                    transition={{
+                      duration: 24,
+                      ease: "linear",
+                      repeat: Infinity,
+                    }}
+                  >
+                    {[...work.screenshots, ...work.screenshots].map(
+                      (shot, shotIndex) => (
+                        <div 
+                          key={`${work.id}-${shotIndex}`} 
+                          className="w-40 h-28 sm:w-64 sm:h-40 md:w-80 md:h-52 flex-shrink-0 bg-transparent rounded-xl flex items-center justify-center p-1"
+                        >
+                          <img
+                            src={shot}
+                            alt={`${work.title} preview ${shotIndex + 1}`}
+                            className="w-full h-full rounded-lg object-contain bg-white/60 dark:bg-white/10 backdrop-blur-sm shadow-sm"
+                            loading="lazy"
+                          />
+                        </div>
+                      ),
+                    )}
+                  </motion.div>
+                </div>
               </div>
             </AnimatedCard>
           ))}
-        </motion.div>
+        </div>
 
         {/* BD Clients Section Header */}
         <motion.div
